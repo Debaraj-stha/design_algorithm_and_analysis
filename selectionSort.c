@@ -9,11 +9,11 @@ void swap(int *a, int *b)
 void selectionSort(int arr[], int n)
 {
     int least, p, i, j;
-    for (i = 0; i < n; i++)
+    for (i = 0; i <=n-1; i++)
     {
         least = arr[i];
         p = i;
-        for (j = i + 1; j < n; j++)
+        for (j = i + 1; j <= n-1; j++)
         {
             if (arr[j] < least)
             { // Compare with 'least' instead of 'arr[i]'
@@ -22,8 +22,11 @@ void selectionSort(int arr[], int n)
             }
             
         }
-
-        swap(&arr[i], &arr[p]);
+int temp;
+temp=arr[i];
+arr[i]=arr[p];
+arr[p]=temp;
+        // swap(&arr[i], &arr[p]);
         int k=0;
             for (k=0; k < n; k++)
             {

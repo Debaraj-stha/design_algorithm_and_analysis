@@ -12,14 +12,17 @@ void bubbleSort(int arr[],int n){
         if(arr[j]>arr[j+1])
         swap(&arr[j],&arr[j+1]);
     }
+       int k=0;
+       for(k=0;k<n;k++)
+   printf("%d\t",arr[k]);
+   printf("\n");
+
    }
-}
+   }
 int main(){
 int i,n;
-    int arr[]={6,2,9,3,22,32};
+    int arr[]={25,57,48,37,12,92,86,33};
     n=sizeof(arr)/sizeof(int);
     bubbleSort(arr,n);
-    for(i=0;i<n;i++){
-        printf("%d\t",arr[i]);
-    }
+    
 }
