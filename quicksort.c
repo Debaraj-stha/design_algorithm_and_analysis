@@ -7,7 +7,7 @@ void swap(int *a, int *b) {
     *b = temp;
 }
 
-partition(A,p,r)
+partition(A,p,r){
 x=A[r]
 i=p-1
 for j=p to r-1
@@ -16,26 +16,15 @@ for j=p to r-1
     swap(A[i],A[j])
 sweap(A[i+1],A[r])
 return i+1
-quickSort(A,p,r)
-if(p<r)
+}
+quickSort(A,p,r){
+if(p<r){
     q=partition(A,p,r)
     quickSort(A,p,q-1)
     quickSort(A,q+1,r)
-    int partition(int arr[], int p, int r) {
-    int x, j, i;
-    x = arr[r];
-    i = p - 1;
-
-    for (j = p; j <= r - 1; j++) {
-        if (arr[j] <= x) {
-            i = i + 1;
-            swap(&arr[i], &arr[j]);
-        }
-    }
-    swap(&arr[i + 1], &arr[r]);
-    return i + 1;
 }
-
+   
+}
 void quicksort(int arr[], int p, int r) {
     if (p < r) {
         int q = partition(arr, p, r);

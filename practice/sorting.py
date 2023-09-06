@@ -51,8 +51,8 @@ def merge(mylist, p, q, r):
     for j in range(n2):
         right[j] = mylist[q + j + 1]
 
-    left[n1] = float("inf") 
-    right[n2] = float("inf")  
+    left[n1] = float("inf")
+    right[n2] = float("inf")
 
     i = 0
     j = 0
@@ -74,6 +74,24 @@ def mergeSort(mylist, p, r):
         merge(mylist, p, q, r)
 
 
+def partition(mylist, p, r):
+    x = mylist[r]
+    i = p - 1
+    for j in range(p, r):
+        if mylist[j] <= x:
+            i = i + 1
+            mylist[i], mylist[j] = mylist[j], mylist[i]
+    mylist[i + 1], mylist[r] = mylist[r], mylist[i + 1]
+    return i + 1
+
+
+def quicksort(mylist, p, r):
+    if p < r:
+        q = partition(mylist, p, r)
+        quicksort(mylist, p, q - 1)
+        quicksort(mylist, q + 1, r)
+
+
 if __name__ == "__main__":
     mylist = [99, 75, 89, 3, 1, 55, 32, 2, 5]
 
@@ -84,5 +102,11 @@ if __name__ == "__main__":
     length = len(mylist)
     mergeSort(mylist, 0, length - 1)
     print("\nmergesort")
+    for i in mylist:
+        print(i, end=",")
+    mylist = [9, 6, 5, 1, 7, 22, 4]
+    length = len(mylist)
+    print("\nquic sort")
+    quicksort(mylist, 0, length - 1)
     for i in mylist:
         print(i, end=",")
