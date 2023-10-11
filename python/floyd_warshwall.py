@@ -5,17 +5,7 @@
 nV = 4
 
 INF = 999
-def floyd_warshall(G):
-    distance=list(map(lambda i:list(map(lambda j:j,i)),G))
-    for k in range(nV):
-        for i in range(nV):
-            for j in range(nV):
-                distance[i,j]=min(distance[i,j],distance[i][k]+distance[k][i])
-    
-        for i in range(nV):
-            for j in range(nV):
-                if(distance[i,j]==INF):
-                    print("INF",end="")
+
 
 # Algorithm implementation
 def floyd_warshall(G):
@@ -38,7 +28,7 @@ def print_solution(distance):
             else:
                 print(distance[i][j], end="  ")
         print(" ")
-dis=list(map(lambda i:list(map(lambda j:j,i)),G))
+
 
 G = [[0, 3, INF, 5],
          [2, 0, INF, 4],
